@@ -19,10 +19,18 @@ Feature: Test functionality of the login page
     When I click on Sign In button again
     Then The account page "https://magento.softwaretestingboard.com/customer/account/" is opened
     Then The account information for "Cosa Laurentiu" is displayed
-#    Then The account information fields are populated
+
 @T3
   Scenario: Check that sign out option is successfully
     When I select the Logged In dropdown menu
     When I select the Sign Out option
     Then The Signed-Out Url is "https://magento.softwaretestingboard.com/customer/account/logoutSuccess/"
     Then After 5 seconds redirects to homepage URL "https://magento.softwaretestingboard.com/"
+
+@code_to_be_written
+  Scenario: Verify Forgot Password functionality
+    When I click on the Forgot Your password link
+    When I insert a random email adress in E-mail field
+    When I click Reset my Password button
+    Then An confirmation message is displayed
+    Then The message contains 'you will receive an email with a link to reset your password'
