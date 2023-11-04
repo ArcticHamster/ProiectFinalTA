@@ -28,9 +28,9 @@ Feature: Test functionality of the login page
     Then After 5 seconds redirects to homepage URL "https://magento.softwaretestingboard.com/"
 
 @code_to_be_written
-  Scenario: Verify Forgot Password functionality
-    When I click on the Forgot Your password link
-    When I insert a random email adress in E-mail field
-    When I click Reset my Password button
-    Then An confirmation message is displayed
-    Then The message contains 'you will receive an email with a link to reset your password'
+#  Scenario: Verify Forgot Password functionality
+#    When I click on the Forgot Your password link
+#    When I insert a random email adress in E-mail field
+#    When I click Reset my Password button
+#    Then An confirmation message is displayed
+#    Then The message contains 'you will receive an email with a link to reset your password'
