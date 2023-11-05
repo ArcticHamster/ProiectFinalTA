@@ -9,7 +9,8 @@ https://www.python.org/downloads/
 3. Install PyCharm Community Edition
 https://www.jetbrains.com/pycharm/download/
 
-4. Clone project from git link TBD
+4. Clone project
+https://github.com/ArcticHamster/ProiectFinalTA.git
 
 5. Open Pycharm and open project
 
