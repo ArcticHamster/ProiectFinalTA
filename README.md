@@ -25,7 +25,7 @@ pip install selenium
    Ini
 
 8. Run test using command in terminal:
-behave -f html -o tests_report.html
+behave -f html -o test_report.html
 
-9. View tests results opening created file 'tests_report.html with your browser of choice
+9. View tests results opening created file 'test_report.html with your browser of choice
 
