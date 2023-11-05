@@ -3,6 +3,7 @@ import random
 import string
 from selenium.webdriver.support.select import Select
 
+
 class BasePage(Driver):
     pass
 

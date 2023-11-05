@@ -15,7 +15,6 @@ class SignUpPage(BasePage):
     CREATE_ACCOUNT_BUTTON = (By.CSS_SELECTOR, ".action.submit.primary")
     # ERROR_MESSAGE = (By.CSS_SELECTOR, ".message-error.error.message")
 
-
     def navigate_to_signup_page(self):
         self.driver.get(self.SIGNUP_PAGE_URL)
         time.sleep(1)
@@ -32,7 +31,7 @@ class SignUpPage(BasePage):
     #     time.sleep(1)
 
     def set_random_email(self, email):
-        email = self.randomtext('weak',10)+'@email.com'
+        email = self.randomtext('weak', 10)+'@email.com'
         self.type(self.EMAIL_INPUT, email)
         time.sleep(1)
 
@@ -47,4 +46,3 @@ class SignUpPage(BasePage):
     def click_create_account_button(self):
         self.click(self.CREATE_ACCOUNT_BUTTON)
         time.sleep(3)
-

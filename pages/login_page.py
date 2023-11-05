@@ -4,12 +4,10 @@ import time
 from pages.base_page import BasePage
 
 
-
 class LoginPage(BasePage):
-
     LOGIN_PAGE_URL = "https://magento.softwaretestingboard.com/customer/account/login"
 
-    #definim selectorii
+    # definim selectorii
     ACCEPTA_COOKIES_BUTTON = (By.CSS_SELECTOR, "button.amgdprcookie-button.-allow.-save")
     EMAIL_INPUT = (By.ID, "email")
     PASSWORD_INPUT = (By.ID, "pass")
@@ -19,7 +17,7 @@ class LoginPage(BasePage):
     LOGGED_IN_DROPDOWN_MENU = (By.XPATH, "//button[@class='action switch'][1]")
     SIGN_OUT_MENU_OPTION = (By.LINK_TEXT, "Sign Out")
 
-    #definim actiunile
+    # definim actiunile
     def navigate_to_login_page(self):
         self.driver.get(self.LOGIN_PAGE_URL)
         time.sleep(1)
