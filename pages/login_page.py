@@ -8,7 +8,7 @@ class LoginPage(BasePage):
     LOGIN_PAGE_URL = "https://magento.softwaretestingboard.com/customer/account/login"
 
     # definim selectorii
-    ACCEPTA_COOKIES_BUTTON = (By.CSS_SELECTOR, "button.amgdprcookie-button.-allow.-save")
+    # ACCEPTA_COOKIES_BUTTON = (By.CSS_SELECTOR, "button.amgdprcookie-button.-allow.-save")
     EMAIL_INPUT = (By.ID, "email")
     PASSWORD_INPUT = (By.ID, "pass")
     SIGN_IN_BUTTON = (By.ID, "send2")
@@ -19,6 +19,7 @@ class LoginPage(BasePage):
 
     # definim actiunile
     def navigate_to_login_page(self):
+        self.driver.delete_all_cookies()
         self.driver.get(self.LOGIN_PAGE_URL)
         time.sleep(1)
 

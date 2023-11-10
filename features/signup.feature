@@ -23,4 +23,4 @@ Feature: Test functionality of the signup page
     Then The account is NOT created, and URL is still "https://magento.softwaretestingboard.com/customer/account/create"
 
 
-    # Scenario: Verify posibility to create new account using same password
+    # Scenario: Verify posibility to create new account using same email
