@@ -13,7 +13,7 @@ Feature: Test functionality of the signup page
     Then The account is NOT created and URL is still "https://magento.softwaretestingboard.com/customer/account/create"
 #unaccepted symbols: ^=
 
-  @wip
+
   Scenario: Verify numbers acceptance in Personal Information fields
     When I enter numbers in first name input field
     When I enter numbers in last name input field
@@ -21,6 +21,5 @@ Feature: Test functionality of the signup page
     When I insert a random password in the password input and in confirm password fields
     When I click on the create account button again
     Then The account is NOT created, and URL is still "https://magento.softwaretestingboard.com/customer/account/create"
-
 
     # Scenario: Verify posibility to create new account using same email

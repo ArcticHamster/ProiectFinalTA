@@ -41,6 +41,7 @@ class LoginPage(BasePage):
         self.click(self.SIGN_IN_BUTTON)
         time.sleep(3)
 
+
     def is_error_message_displayed(self):
         return self.is_element_displayed(self.ERROR_MESSAGE)
 
