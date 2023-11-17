@@ -2,7 +2,7 @@ Feature: Test functionality of the signup page
 
   Background: Open Signup Page
     Given I am on the signup page
-@wip
+
   Scenario: Check posibility to create new account using already registered email
     When I enter random first and last name in corresponding fields
     When I insert an registered "email" in the email input field
@@ -19,7 +19,6 @@ Feature: Test functionality of the signup page
     When I click on the create account button
     Then The account is NOT created and URL is still "https://magento.softwaretestingboard.com/customer/account/create"
 #unaccepted symbols: ^=
-
 
   Scenario: Verify numbers acceptance in Personal Information fields
     When I enter numbers in first name input field
