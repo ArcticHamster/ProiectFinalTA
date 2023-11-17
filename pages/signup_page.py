@@ -30,18 +30,13 @@ class SignUpPage(BasePage):
         self.type(self.EMAIL_INPUT, email)
         time.sleep(1)
 
-    def set_random_email(self, email):
+    def set_random_email(self):
         email = self.randomtext('weak', 10)+'@email.com'
         self.type(self.EMAIL_INPUT, email)
         time.sleep(1)
 
     def set_password_and_confirm(self, password):
         self.double_type(self.PASSWORD_INPUT, self.CONFIRM_PASSWORD_INPUT, password)
-
-    # def set_confirm_password(self):
-    #     same_password = self.get_text(self.PASSWORD_INPUT)
-    #     self.type(self.CONFIRM_PASSWORD_INPUT, same_password)
-    #     time.sleep(10)
 
     def click_create_account_button(self):
         self.click(self.CREATE_ACCOUNT_BUTTON)

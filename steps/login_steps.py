@@ -69,10 +69,12 @@ def step_impl(context, name):
 # Scenario 3: Check that sign out option is successfully
 
 @when('I login using valid credentials')
-def step_impl(context)
+def step_impl(context):
     context.login_page.set_email('only.laur@gmail.com')
     context.login_page.set_password("e&9]2&D3f^8%)CA")
     context.login_page.click_sign_in_button()
+    time.sleep(2)
+
 
 @when('I select the Logged In dropdown menu')
 def step_impl(context):
@@ -95,3 +97,30 @@ def step_impl(context, expected_url):
 @Then('After 5 seconds redirects to homepage URL "{expected_url}"')
 def step_impl(context, expected_url):
     assert context.login_page.is_url_as_expected(expected_url), f'Page URL is not {expected_url}'
+
+
+# Scenario: Verify Forgot Password functionality
+
+@when('I click on the Forgot Your password link')
+def step_impl(context):
+    context.login_page.click_forgot_password_link()
+
+
+@when('I insert a random email address in E-mail field')
+def step_impl(context):
+    context.login_page.set_forgot_pswd_email()
+
+
+@when('I click Reset my Password button')
+def step_impl(context):
+    context.login_page.click_reset_pswd_button()
+
+
+@then('Signup: A confirmation message is displayed')
+def step_impl(context):
+    context.login_page.is_success_message_displayed()
+
+
+@then('The message contains "{text}"')
+def step_impl(context, text):
+    assert text in context.login_page.get_success_message_text(), 'Error message not displayed'

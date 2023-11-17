@@ -14,8 +14,12 @@ class LoginPage(BasePage):
     SIGN_IN_BUTTON = (By.ID, "send2")
     ERROR_MESSAGE = (By.CSS_SELECTOR, "div.message-error")
     ACCOUNT_INFORMATIONS = (By.CSS_SELECTOR, ".box-information > div:nth-child(2)")
-    LOGGED_IN_DROPDOWN_MENU = (By.XPATH, "//button[@class='action switch'][1]")
+    LOGGED_IN_DROPDOWN_MENU = (By.XPATH, "(//button[@class='action switch'])[1]")
     SIGN_OUT_MENU_OPTION = (By.LINK_TEXT, "Sign Out")
+    FORGOT_PSWD_LINK = (By.XPATH, "//a[@class='action remind']")
+    FORGOT_PSWD_EMAIL_INPUT = (By.XPATH, "//input[@id='email_address']")
+    RESET_PSWD_BUTTON = (By.XPATH, "//button[@class='action submit primary']")
+    RESET_PSWD_SUCCESS_MESSAGE = (By.XPATH, "//div[@class='message-success success message']")
 
     # definim actiunile
     def navigate_to_login_page(self):
@@ -55,3 +59,19 @@ class LoginPage(BasePage):
 
     def click_sign_out_menu_option(self):
         self.click(self.SIGN_OUT_MENU_OPTION)
+
+    def click_forgot_password_link(self):
+        self.click(self.FORGOT_PSWD_LINK)
+
+    def set_forgot_pswd_email(self):
+        email = self.randomtext('weak', 10) + '@email.com'
+        self.type(self.FORGOT_PSWD_EMAIL_INPUT, email)
+
+    def click_reset_pswd_button(self):
+        self.click(self.RESET_PSWD_BUTTON)
+
+    def is_success_message_displayed(self):
+        return self.is_element_displayed(self.RESET_PSWD_SUCCESS_MESSAGE)
+
+    def get_success_message_text(self):
+        return self.get_text(self.RESET_PSWD_SUCCESS_MESSAGE)

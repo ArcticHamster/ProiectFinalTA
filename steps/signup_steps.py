@@ -104,4 +104,4 @@ def step_impl(context):
 
 @then('Signup: The error message contains "{text}"')
 def step_impl(context, text):
-    assert text in context.home_page.get_error_message_text(), 'Error message not displayed'
+    assert text in context.signup_page.get_error_message_text(), 'Error message not displayed'
