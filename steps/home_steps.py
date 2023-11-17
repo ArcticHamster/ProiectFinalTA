@@ -42,7 +42,6 @@ def step_impl(context, text):
     assert text in context.home_page.get_error_message_text(), 'Error message not displayed'
 
 # Scenario: Check Add to Cart option when entering required details: size, colour
-
 @when('I click on random size and color labels')
 def step_impl(context):
     context.home_page.click_random_size_of_selected_product()

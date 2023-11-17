@@ -13,7 +13,7 @@ class SignUpPage(BasePage):
     PASSWORD_INPUT = (By.ID, "password")
     CONFIRM_PASSWORD_INPUT = (By.ID, "password-confirmation")
     CREATE_ACCOUNT_BUTTON = (By.CSS_SELECTOR, ".action.submit.primary")
-    # ERROR_MESSAGE = (By.CSS_SELECTOR, ".message-error.error.message")
+    ACCOUNT_ERROR_MESSAGE = (By.XPATH, "//div[@class='message-error error message']")
 
     def navigate_to_signup_page(self):
         self.driver.get(self.SIGNUP_PAGE_URL)
@@ -26,16 +26,16 @@ class SignUpPage(BasePage):
         self.type(self.LAST_NAME_INPUT, last_name)
         time.sleep(1)
 
-    # def set_email(self, email):
-    #     self.type(self.EMAIL_INPUT, email)
-    #     time.sleep(1)
+    def set_email(self, email):
+        self.type(self.EMAIL_INPUT, email)
+        time.sleep(1)
 
     def set_random_email(self, email):
         email = self.randomtext('weak', 10)+'@email.com'
         self.type(self.EMAIL_INPUT, email)
         time.sleep(1)
 
-    def set_password(self, password):
+    def set_password_and_confirm(self, password):
         self.double_type(self.PASSWORD_INPUT, self.CONFIRM_PASSWORD_INPUT, password)
 
     # def set_confirm_password(self):
@@ -46,3 +46,9 @@ class SignUpPage(BasePage):
     def click_create_account_button(self):
         self.click(self.CREATE_ACCOUNT_BUTTON)
         time.sleep(3)
+
+    def is_error_message_displayed(self):
+        return self.is_element_displayed(self.ACCOUNT_ERROR_MESSAGE)
+
+    def get_error_message_text(self):
+        return self.get_text(self.ACCOUNT_ERROR_MESSAGE)

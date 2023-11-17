@@ -22,12 +22,13 @@ Feature: Test functionality of the login page
 
 
   Scenario: Check that sign out option is successfully
+    When I login using valid credentials
     When I select the Logged In dropdown menu
     When I select the Sign Out option
     Then The Signed-Out Url is "https://magento.softwaretestingboard.com/customer/account/logoutSuccess/"
     Then After 5 seconds redirects to homepage URL "https://magento.softwaretestingboard.com/"
 
-@code_to_be_written
+@wip
 #  Scenario: Verify Forgot Password functionality
 #    When I click on the Forgot Your password link
 #    When I insert a random email address in E-mail field

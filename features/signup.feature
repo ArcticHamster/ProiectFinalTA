@@ -22,4 +22,10 @@ Feature: Test functionality of the signup page
     When I click on the create account button again
     Then The account is NOT created, and URL is still "https://magento.softwaretestingboard.com/customer/account/create"
 
-    # Scenario: Verify posibility to create new account using same email
+  Scenario: Check posibility to create new account using already registered email
+    When I enter random first and last name in corresponding fields
+    When I insert an registered "email" in the email input field
+    When I insert a random password in the password and confirm password input fields
+    When I click create account button
+    Then Signup: A error message is displayed
+    Then Signup: The error message contains "There is already an account"

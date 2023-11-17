@@ -68,6 +68,12 @@ def step_impl(context, name):
 
 # Scenario 3: Check that sign out option is successfully
 
+@when('I login using valid credentials')
+def step_impl(context)
+    context.login_page.set_email('only.laur@gmail.com')
+    context.login_page.set_password("e&9]2&D3f^8%)CA")
+    context.login_page.click_sign_in_button()
+
 @when('I select the Logged In dropdown menu')
 def step_impl(context):
     context.login_page.click_logged_in_dropdown_menu()

@@ -23,11 +23,11 @@ class LoginPage(BasePage):
         self.driver.get(self.LOGIN_PAGE_URL)
         time.sleep(1)
 
-    def accept_cookies_ckeck(self):
-        if self.is_element_displayed(self.ACCEPTA_COOKIES_BUTTON):
-            self.click(self.ACCEPTA_COOKIES_BUTTON)
-        else:
-            pass
+    # def accept_cookies_ckeck(self):
+    #     if self.is_element_displayed(self.ACCEPTA_COOKIES_BUTTON):
+    #         self.click(self.ACCEPTA_COOKIES_BUTTON)
+    #     else:
+    #         pass
 
     def set_email(self, email):
         self.type(self.EMAIL_INPUT, email)
@@ -40,7 +40,6 @@ class LoginPage(BasePage):
     def click_sign_in_button(self):
         self.click(self.SIGN_IN_BUTTON)
         time.sleep(3)
-
 
     def is_error_message_displayed(self):
         return self.is_element_displayed(self.ERROR_MESSAGE)
