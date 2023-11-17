@@ -8,7 +8,7 @@ class LoginPage(BasePage):
     LOGIN_PAGE_URL = "https://magento.softwaretestingboard.com/customer/account/login"
 
     # definim selectorii
-    # ACCEPTA_COOKIES_BUTTON = (By.CSS_SELECTOR, "button.amgdprcookie-button.-allow.-save")
+
     EMAIL_INPUT = (By.ID, "email")
     PASSWORD_INPUT = (By.ID, "pass")
     SIGN_IN_BUTTON = (By.ID, "send2")
@@ -56,9 +56,11 @@ class LoginPage(BasePage):
 
     def click_logged_in_dropdown_menu(self):
         self.click(self.LOGGED_IN_DROPDOWN_MENU)
+        time.sleep(1)
 
     def click_sign_out_menu_option(self):
         self.click(self.SIGN_OUT_MENU_OPTION)
+        time.sleep(3)
 
     def click_forgot_password_link(self):
         self.click(self.FORGOT_PSWD_LINK)

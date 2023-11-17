@@ -8,7 +8,7 @@ class HomePage(BasePage):
     LOGO_BUTTON = (By.XPATH, "//a[@class='logo']")
     SEARCH_BOX = (By.ID, "search")
     SEARCH_BUTTON = (By.XPATH, "//button[@class='action search']")
-    SEARCH_RESULTS = (By.CLASS_NAME, "product-image-photo")
+    SEARCH_RESULTS = (By.XPATH, "//div[@class='search results']//img[@class='product-image-photo']")
     ADD_TO_CART_BUTTON = (By.XPATH, "//button[@id='product-addtocart-button']")
     GENERATED_ERROR = (By.XPATH, "//div[@generated='true'][1]")
     SIZE_OPTION = (By.XPATH, "//div[@class='swatch-option text']")

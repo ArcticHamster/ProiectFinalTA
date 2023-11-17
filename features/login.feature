@@ -3,7 +3,6 @@ Feature: Test functionality of the login page
     Background: Open Login Page
       Given I am on the login page
 
-
   Scenario: Check error message presence when providing wrong credentials
     When I insert an unregistered email in the email input field
     When I insert a password in the password input field
@@ -24,7 +23,6 @@ Feature: Test functionality of the login page
     When I select the Sign Out option
     Then The Signed-Out Url is "https://magento.softwaretestingboard.com/customer/account/logoutSuccess/"
     Then After 5 seconds redirects to homepage URL "https://magento.softwaretestingboard.com/"
-
 
   Scenario: Verify Forgot Password functionality
     When I click on the Forgot Your password link

@@ -1,5 +1,3 @@
-import time
-
 from behave import *
 
 
@@ -21,7 +19,7 @@ def step_impl(context):
 
 @when('I insert an unregistered "{email}" in the email input field')
 def step_impl(context, email):
-    context.signup_page.set_random_email(email)
+    context.signup_page.set_random_email(context.base_page.randomtext('weak', 10)+'@email.com')
 
 
 @when('I insert a random password in the password input and confirm password fields')
@@ -32,7 +30,6 @@ def step_impl(context):
 @when('I click on the create account button')
 def step_impl(context):
     context.signup_page.click_create_account_button()
-    time.sleep(3)
 
 
 @Then('The account is NOT created and URL is still "{expected_url}"')
@@ -41,7 +38,6 @@ def step_impl(context, expected_url):
 
 
 # Scenario 2: Verify numbers acceptance in Personal Information fields
-
 @when('I enter numbers in first name input field')
 def step_impl(context):
     context.signup_page.set_first_name(context.base_page.randomtext('numbers', 8))
@@ -54,7 +50,7 @@ def step_impl(context):
 
 @when('I insert another unregistered "{email}" in the email input field')
 def step_impl(context, email):
-    context.signup_page.set_random_email(email)
+    context.signup_page.set_random_email(context.base_page.randomtext('weak', 10)+'@email.com')
 
 
 @when('I insert a random password in the password input and in confirm password fields')
@@ -65,7 +61,6 @@ def step_impl(context):
 @when('I click on the create account button again')
 def step_impl(context):
     context.signup_page.click_create_account_button()
-    time.sleep(3)
 
 
 @then('The account is NOT created, and URL is still "{expected_url}"')
@@ -74,7 +69,6 @@ def step_impl(context, expected_url):
 
 
 # Scenario 3: Check posibility to create new account using already registered email
-
 @when('I enter random first and last name in corresponding fields')
 def step_impl(context):
     context.signup_page.set_first_name(context.base_page.randomtext('medium', 10))
@@ -94,7 +88,6 @@ def step_impl(context):
 @when('I click create account button')
 def step_impl(context):
     context.signup_page.click_create_account_button()
-    time.sleep(3)
 
 
 @then('Signup: A error message is displayed')

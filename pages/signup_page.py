@@ -6,7 +6,6 @@ from pages.base_page import BasePage
 
 class SignUpPage(BasePage):
     SIGNUP_PAGE_URL = "https://magento.softwaretestingboard.com/customer/account/create"
-
     FIRST_NAME_INPUT = (By.ID, "firstname")
     LAST_NAME_INPUT = (By.ID, "lastname")
     EMAIL_INPUT = (By.ID, "email_address")
@@ -17,7 +16,7 @@ class SignUpPage(BasePage):
 
     def navigate_to_signup_page(self):
         self.driver.get(self.SIGNUP_PAGE_URL)
-        time.sleep(1)
+        time.sleep(2)
 
     def set_first_name(self, first_name):
         self.type(self.FIRST_NAME_INPUT, first_name)
@@ -30,8 +29,7 @@ class SignUpPage(BasePage):
         self.type(self.EMAIL_INPUT, email)
         time.sleep(1)
 
-    def set_random_email(self):
-        email = self.randomtext('weak', 10)+'@email.com'
+    def set_random_email(self, email):
         self.type(self.EMAIL_INPUT, email)
         time.sleep(1)
 
