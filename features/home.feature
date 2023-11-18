@@ -1,6 +1,5 @@
 Feature: Test functionality of serch field and order options
 
-
   Background: Login with registered account
     Given I am on the Login page
     When I insert registered email and password
@@ -18,7 +17,7 @@ Feature: Test functionality of serch field and order options
     When I click button Add to Cart
     Then A confirmation message is displayed
     Then The confirmation message contains "You added"
-@wip
+
   Scenario: Check subtotal calculation for existing items in cart
     When I click on cart button
     Then The list of cart items is displayed

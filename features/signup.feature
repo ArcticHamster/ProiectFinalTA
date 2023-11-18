@@ -18,7 +18,7 @@ Feature: Test functionality of the signup page
     When I insert a random password in the password input and confirm password fields
     When I click on the create account button
     Then The account is NOT created and URL is still "https://magento.softwaretestingboard.com/customer/account/create"
-#unaccepted symbols: ^=
+#unaccepted symbols: ^=...
 
   Scenario: Verify numbers acceptance in Personal Information fields
     When I enter numbers in first name input field
